@@ -7,3 +7,4 @@ As a practice project I want to make an enigma machine simulator
 Step 1: actually learn fully how the enigma machine works, I have a general Idea but I'm not fully sure
 
 Step 2: Decide how it will operated by the user
+  - I'm thinking to start with, while just making sure it works right, I'll use designated input & output files
