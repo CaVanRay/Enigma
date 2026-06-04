@@ -55,6 +55,12 @@ int main() {
     bool running = true;
     SDL_Event event;
 
+    Uint64 lastTime = SDL_GetPerformanceCounter();
+    Uint64 frequency = SDL_GetPerformanceFrequency();
+
+    float playerX = 400.0f;
+    float playerSpeed = 200.0f; // pixels per second
+
     SDL_Rect redSquare = {960, 400, 40, 40}; // Initial position and size of the red square
     SDL_Rect ghostSquare = {960, 400, 40, 40}; // Ghost square for collision detection
     SDL_Rect bluePlatform = {960, 1200, 400, 40}; // Blue platform in center of the screen
@@ -62,7 +68,7 @@ int main() {
     SDL_Rect yellowPlatform = {1100, 850, 400, 40}; // Yellow platform on the right side of the screen
 
     float verticalVelocity = 0.0f; // Speed of the red square
-    const float GRAVITY = 0.3f; // Gravity affecting the red square
+    const float GRAVITY = 800.0f; // Gravity affecting the red square
     bool onGround = true; // To check if the red square is on the ground for jumping
 
     if (bgMusic){
@@ -76,27 +82,38 @@ int main() {
             if (event.type == SDL_QUIT) running = false;
         }
 
+        // Calculate delta time
+        Uint64 currentTime = SDL_GetPerformanceCounter();
+        float deltaTime = (float)(currentTime - lastTime) / frequency;
+        lastTime = currentTime;
+
+        // Clamp delta time
+        if (deltaTime > 0.05f) deltaTime = 0.05f;
+
+
+
+
         // getting window size to prevent the square from moving out of bounds
         int windowWidth, windowHeight;
         SDL_GetWindowSize(window, &windowWidth, &windowHeight);
         
 
         float horizontalVelocity = 0.0f; // Horizontal velocity reset each frame
-        verticalVelocity += GRAVITY; // Apply gravity to vertical velocity
+        verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity
 
     // **************************************** KEYBOARD INPUT **************************************** 
 
         // Handle keyboard input
         const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
         if (keyboardState[SDL_SCANCODE_LEFT]) {
-            horizontalVelocity = -5.0f; 
+            horizontalVelocity = -300.0f * deltaTime; 
         }
         if (keyboardState[SDL_SCANCODE_RIGHT]) {
-            horizontalVelocity = 5.0f;
+            horizontalVelocity = 300.0f * deltaTime;
         }
         if (keyboardState[SDL_SCANCODE_SPACE] && onGround) {
             Mix_PlayChannel( -1, jumpSound, 0);
-            verticalVelocity -= 12.0f; 
+            verticalVelocity = -600.0f * deltaTime; 
             onGround = false;
         }
         if (keyboardState[SDL_SCANCODE_ESCAPE]) {
@@ -111,7 +128,7 @@ int main() {
         }
 
         // **************************************** VERTICAL MOVEMENT **************************************** 
-        ghostSquare.y += verticalVelocity;
+        ghostSquare.y += (int)(verticalVelocity * deltaTime);
         ghostSquare.y = std::min(windowHeight - ghostSquare.h, ghostSquare.y);
 
         bool hitWall = false; // Flag to check if we hit the wall
