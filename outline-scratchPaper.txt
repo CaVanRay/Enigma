@@ -1,3 +1,5 @@
 I've been cutting, re-organizing, and changing without paying attention to my organization and now
 my code looks like a barely readable mess.
 
+I need to clean it up now before I get to the point of expanding into multiple files
+
