@@ -3,7 +3,7 @@ CXX = g++
 
 # Use sdl2-config to get the correct compiler and linker flags
 CFLAGS = $(shell sdl2-config --cflags)
-LDFLAGS = $(shell sdl2-config --libs)
+LDFLAGS = $(shell sdl2-config --libs) -lSDL2_ttf -lSDL2_mixer
 
 # Source file
 SRC = src/red_square.cpp
