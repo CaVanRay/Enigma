@@ -75,6 +75,9 @@ int main(){
 
     bool running = true;
     SDL_Event event;
+
+    Uint64 lastTime = SDL_GetPerformanceCounter();
+    Uint64 frequency = SDL_GetPerformanceFrequency();
     
     // **************************************** GAME LOOP ****************************************
   while(){
