@@ -21,6 +21,11 @@ int main(){
     // INITIALIZE TEXT
 
     // INITIALIZE AUDIO
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
+        std::cerr << "SDL_mixer couldnot initialize! Error: " << Mix_GetError() << std::endl;
+        return 1;
+    }
     
     // **************************************** GAME VARIABLES ***********************************
     // **************************************** GAME LOOP ****************************************
