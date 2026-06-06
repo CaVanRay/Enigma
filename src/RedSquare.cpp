@@ -26,6 +26,9 @@ int main(){
         std::cerr << "SDL_mixer couldnot initialize! Error: " << Mix_GetError() << std::endl;
         return 1;
     }
+
+    Mix_Chunk* jumpSound = NULL;
+    Mix_Music* bgMusic = NULL;
     
     // **************************************** GAME VARIABLES ***********************************
     // **************************************** GAME LOOP ****************************************
