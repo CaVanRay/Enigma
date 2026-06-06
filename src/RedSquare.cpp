@@ -104,7 +104,13 @@ int main(){
             if (event.type == SDL_QUIT) running = false;
         }
     
-        
+        // Calculate delta time
+        Uint64 currentTime = SDL_GetPerformanceCounter();
+        float deltaTime = (float)(currentTime - lastTime) / frequency;
+        lastTime = currentTime;
+
+        // Clamp delta time
+        if (deltaTime > 0.05f) deltaTime = 0.05f;    
         
     // **************************************** KEYBOARD INPUT ***************************************
         // **************************************** HORIZONTAL MOVEMENT ******************************
