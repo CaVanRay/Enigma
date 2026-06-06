@@ -90,9 +90,15 @@ int main(){
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 800.0f; // Gravity affecting the red square
     bool onGround = true; // To check if the red square is on the ground for jumping
-    
+
     // **************************************** GAME LOOP ****************************************
-  while(){
+    
+    // START GAME MUSIC BEFORE LOOP BEGINS
+    if (bgMusic){
+        Mix_PlayMusic(bgMusic, -1);
+    }
+    
+    while(){
     // **************************************** KEYBOARD INPUT ***************************************
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
