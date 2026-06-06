@@ -129,7 +129,9 @@ int main(){
         if (keyboardState[SDL_SCANCODE_LEFT]){
             horizontalVelocity = -300.0f * deltaTime;
         }
-        
+        if (keyboardState[SDL_SCANCODE_RIGHT]) {
+            horizontalVelocity = 300.0f * deltaTime;
+        }
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
