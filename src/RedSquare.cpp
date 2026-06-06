@@ -47,7 +47,8 @@ int main(){
         return 1;
     }    
 
-
+    SDL_Color textColor = { 255, 255, 255, 255};
+    
     // INITIALIZE AUDIO
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
