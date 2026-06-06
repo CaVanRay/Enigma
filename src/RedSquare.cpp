@@ -219,8 +219,33 @@ int main(){
         redSquare.y = ghostSquare.y;
         
         // **************************************** RENDERING **************************************** 
-  }
-    
+  
+        // Clear to black
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer);
+        // Draw red square
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        // SDL_Rect redSquare = {100, 100, 200, 200};
+        SDL_RenderFillRect(renderer, &redSquare);
+        // Draw blue platform
+        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+        SDL_RenderFillRect(renderer, &bluePlatform);
+        // Draw green platform
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        SDL_RenderFillRect(renderer, &greenPlatform);
+        // Draw yellow platform
+        SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
+        SDL_RenderFillRect(renderer, &yellowPlatform);
+
+        SDL_RenderPresent(renderer);
+
+    }
     
     // **************************************** CLEANUP ******************************************
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return 0;
+    
 }
