@@ -137,6 +137,9 @@ int main(){
             verticalVelocity = -600.0f * deltaTime; 
             onGround = false;
         }
+        if (keyboardState[SDL_SCANCODE_ESCAPE]) {
+            running = false;
+        }
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
