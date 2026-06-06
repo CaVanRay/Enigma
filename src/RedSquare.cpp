@@ -119,6 +119,9 @@ int main(){
 
     // **************************************** RESET SECTION ****************************************
         
+        float horizontalVelocity = 0.0f; // Horizontal velocity reset each frame
+        verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity
+        
     // **************************************** KEYBOARD INPUT ***************************************
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
