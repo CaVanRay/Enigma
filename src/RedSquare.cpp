@@ -79,7 +79,6 @@ int main(){
     Uint64 lastTime = SDL_GetPerformanceCounter();
     Uint64 frequency = SDL_GetPerformanceFrequency();
     
-    float playerSpeed = 200.0f; // pixels per second
 
     SDL_Rect redSquare = {960, 400, 40, 40}; // Initial position and size of the red square
     SDL_Rect ghostSquare = {960, 400, 40, 40}; // Ghost square for collision detection
@@ -87,6 +86,7 @@ int main(){
     SDL_Rect greenPlatform = {500, 1000, 400, 40}; // Green platform on the left side of the screen
     SDL_Rect yellowPlatform = {1100, 850, 400, 40}; // Yellow platform on the right side of the screen
 
+    float playerSpeed = 200.0f; // pixels per second
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 800.0f; // Gravity affecting the red square
     bool onGround = true; // To check if the red square is on the ground for jumping
