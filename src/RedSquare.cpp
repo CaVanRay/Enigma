@@ -35,6 +35,12 @@ int main(){
         std::cerr << "Failed to load jump sound! SDL_mixer Error: " << Mix_GetError() << std::endl;
         return 1;
     }
+
+    bgMusic = Mix_LoadMUS("assets/backgroundMusic.wav");
+    if(bgMusic == NULL){
+        std::cerr << "Failed to load background Music! SDL_mixer Error: " << Mix_GetError() << std::endl;
+        return 1;
+    }
     
     // **************************************** GAME VARIABLES ***********************************
     // **************************************** GAME LOOP ****************************************
