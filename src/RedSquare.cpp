@@ -98,7 +98,14 @@ int main(){
         Mix_PlayMusic(bgMusic, -1);
     }
     
-    while(){
+    while(running){
+
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) running = false;
+        }
+    
+        
+        
     // **************************************** KEYBOARD INPUT ***************************************
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
