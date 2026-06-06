@@ -170,11 +170,53 @@ int main(){
         
         // **************************************** VERTICAL MOVEMENT ********************************
         
+        ghostSquare.y += verticalVelocity;
+        ghostSquare.y = std::min(windowHeight - ghostSquare.h, ghostSquare.y);
+
+        bool hitWall = false; // Flag to check if we hit the wall
+        if  (SDL_HasIntersection(&ghostSquare, &bluePlatform)){
+            ghostSquare.y -= verticalVelocity; // undo movement if colliding with blue platform
+            if (verticalVelocity > 0) { // If falling down, we were landing
+                onGround = true;
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after landing
+            } else if (verticalVelocity < 0){ // If moving up, we hit the ceiling
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after hitting ceiling
+            }
+        }
+        if (SDL_HasIntersection(&ghostSquare, &greenPlatform)){
+            ghostSquare.y -= verticalVelocity; // undo movement if colliding with green platform
+            if (verticalVelocity > 0) { // If falling down, we were landing
+                onGround = true;
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after landing
+            } else if (verticalVelocity < 0){ // If moving up, we hit the ceiling
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after hitting ceiling
+            }
+        }
+        if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)){
+            ghostSquare.y -= verticalVelocity; // undo movement if colliding with yellow platform
+            if (verticalVelocity > 0) { // If falling down, we were landing
+                onGround = true;
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after landing
+            } else if (verticalVelocity < 0){ // If moving up, we hit the ceiling
+                hitWall = true;
+                verticalVelocity = 0; // reset vertical movement after hitting ceiling
+            }
+        }
         
+        if (!hitWall && ghostSquare.y >= windowHeight - ghostSquare.h) {
+            onGround = true; // We are on the ground if we hit the bottom of the window
+            verticalVelocity = 0; // Stop vertical movement when hitting the ground
+        }
         
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
         
-        
+        redSquare.x = ghostSquare.x;
+        redSquare.y = ghostSquare.y;
         
         // **************************************** RENDERING **************************************** 
   }
