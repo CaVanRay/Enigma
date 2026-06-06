@@ -35,6 +35,11 @@ int main(){
     
     // INITIALIZE TEXT
 
+    if(TTF_Init() < 0){
+        std::cerr << "SDL_ttf initialization failed: " << TTF_GetError() << std::endl;
+        return 1;
+    }
+    
     // INITIALIZE AUDIO
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
