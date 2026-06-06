@@ -132,6 +132,11 @@ int main(){
         if (keyboardState[SDL_SCANCODE_RIGHT]) {
             horizontalVelocity = 300.0f * deltaTime;
         }
+        if (keyboardState[SDL_SCANCODE_SPACE] && onGround) {
+            Mix_PlayChannel( -1, jumpSound, 0);
+            verticalVelocity = -600.0f * deltaTime; 
+            onGround = false;
+        }
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
