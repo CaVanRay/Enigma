@@ -33,7 +33,7 @@ int main(){
         return 1;
     }
     
-    // INITIALIZE TEXT
+    // INITIALIZE TEXT----------------------
 
     if(TTF_Init() < 0){
         std::cerr << "SDL_ttf initialization failed: " << TTF_GetError() << std::endl;
