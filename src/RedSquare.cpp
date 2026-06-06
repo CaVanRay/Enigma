@@ -78,6 +78,9 @@ int main(){
 
     Uint64 lastTime = SDL_GetPerformanceCounter();
     Uint64 frequency = SDL_GetPerformanceFrequency();
+
+    float playerX = 400.0f;
+    float playerSpeed = 200.0f; // pixels per second
     
     // **************************************** GAME LOOP ****************************************
   while(){
