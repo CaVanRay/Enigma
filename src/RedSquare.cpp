@@ -123,6 +123,13 @@ int main(){
         verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity
         
     // **************************************** KEYBOARD INPUT ***************************************
+
+        // Handle keyboard input
+        const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
+        if (keyboardState[SDL_SCANCODE_LEFT]){
+            horizontalVelocity = -300.0f * deltaTime;
+        }
+        
         // **************************************** HORIZONTAL MOVEMENT ******************************
         // **************************************** VERTICAL MOVEMENT ********************************
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
