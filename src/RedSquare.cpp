@@ -42,6 +42,12 @@ int main(){
 
     TTF_Font* scoreFont = TTF_OpenFont("assets/arial.ttf", 40);
 
+    if(!scoreFont){
+        std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
+        return 1;
+    }    
+
+
     // INITIALIZE AUDIO
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0){
