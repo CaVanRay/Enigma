@@ -1,8 +1,13 @@
 /*
+
 Date: 06/06/2026
 Program: Red Square
 Author: Cavan Ray Theiss
-Description:
+
+Description: in order to learn how to better use the SDL2 library I'm 
+making a bunch of basic games using it. This is a basic side scroller
+where you control a red square. you can jump, sprint, run arounds, and 
+the camera will follow you wherever you go.
 
 */
 
