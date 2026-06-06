@@ -103,7 +103,7 @@ int main(){
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) running = false;
         }
-    
+        
         // Calculate delta time
         Uint64 currentTime = SDL_GetPerformanceCounter();
         float deltaTime = (float)(currentTime - lastTime) / frequency;
@@ -117,6 +117,7 @@ int main(){
         SDL_GetWindowSize(window, &windowWidth, &windowHeight);
         
 
+    // **************************************** RESET SECTION ****************************************
         
     // **************************************** KEYBOARD INPUT ***************************************
         // **************************************** HORIZONTAL MOVEMENT ******************************
