@@ -24,6 +24,9 @@ the camera will follow you wherever you go.
 int main(){
     // **************************************** WINDOW SETUP ************************************* 
 
+    // attempting to fix window zooming in
+    SDL_SetHint(SDL_HINT_VIDEO_HIGHDPI_DISABLED, "1");
+
     // INITIALIZE WINDOW---------------------
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
