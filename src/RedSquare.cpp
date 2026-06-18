@@ -145,7 +145,7 @@ int main(){
         
         float horizontalVelocity = 0.0f; // Horizontal velocity reset each frame
         
-        verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity
+        verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity;
         
         cameraX = redSquare.x - windowWidth / 2;
         cameraY = redSquare.y - windowHeight / 2;
@@ -155,10 +155,10 @@ int main(){
         // Handle keyboard input
         const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
         if (keyboardState[SDL_SCANCODE_LEFT]){
-            horizontalVelocity = -300.0f * deltaTime;
+            horizontalVelocity = -300.0f;
         }
         if (keyboardState[SDL_SCANCODE_RIGHT]) {
-            horizontalVelocity = 300.0f * deltaTime;
+            horizontalVelocity = 300.0f;
         }
         if (keyboardState[SDL_SCANCODE_SPACE] && onGround) {
             Mix_PlayChannel( -1, jumpSound, 0);
@@ -171,18 +171,20 @@ int main(){
         
         // **************************************** HORIZONTAL MOVEMENT ******************************
         
-        ghostSquare.x += horizontalVelocity;
+        ghostSquare.x += (int)(horizontalVelocity * deltaTime);
         ghostSquare.x = std::max(0, std::min(windowWidth - ghostSquare.w, ghostSquare.x)); // prevent moving out of bounds
         if (SDL_HasIntersection(&ghostSquare, &bluePlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with blue platform
+            ghostSquare.x -= (int)(horizontalVelocity * deltaTime); // undo movement if colliding with blue platform
         }
         if (SDL_HasIntersection(&ghostSquare, &greenPlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with green platform
+            ghostSquare.x -= (int)(horizontalVelocity * deltaTime); // undo movement if colliding with green platform
         }
         if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with yellow platform
+            ghostSquare.x -= (int)(horizontalVelocity * deltaTime); // undo movement if colliding with yellow platform
         }
         
+        onGround = false;
+
         // **************************************** VERTICAL MOVEMENT ********************************
         
         ghostSquare.y += (int)(verticalVelocity * deltaTime);
