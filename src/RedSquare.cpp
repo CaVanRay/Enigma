@@ -1,4 +1,4 @@
-*
+/*
 
 Date: 06/06/2026
 Program: Red Square
@@ -45,6 +45,10 @@ int main(){
         SDL_Quit();
         return 1;
     }
+
+    // INITIALIZE BASEPATH -----------------
+
+    std::string basePath = SDL_GetBasePath();
     
     // INITIALIZE TEXT----------------------
 
