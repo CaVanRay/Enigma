@@ -26,6 +26,9 @@ int main(){
 
     // INITIALIZE WINDOW---------------------
 
+    // in case of high DPI display
+    SDL_SetHint(SDL_HINT_VIDEO_HIGHDPI_DISABLED, "1");
+    
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
         return 1;
