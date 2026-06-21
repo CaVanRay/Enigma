@@ -116,7 +116,6 @@ int main(){
     SDL_Rect greenPlatform = {(int)(windowWidth * 0.2f), windowHeight - 440, 400, 40}; // Green platform on the left side of the screen
     SDL_Rect yellowPlatform = {(int)(windowWidth * 0.43f), windowHeight - 590, 400, 40}; // Yellow platform on the right side of the screen
 
-    float playerSpeed = 200.0f; // pixels per second
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
     bool onGround = true; // To check if the red square is on the ground for jumping
