@@ -266,7 +266,6 @@ int main(){
         SDL_RenderFillRect(renderer, &playArea); 
         // Draw red square
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        // SDL_Rect redSquare = {100, 100, 200, 200};
         SDL_RenderFillRect(renderer, &drawRedSquare);
         // Draw blue platform
         SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
