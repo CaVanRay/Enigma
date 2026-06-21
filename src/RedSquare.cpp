@@ -226,7 +226,7 @@ int main(){
             }
         }
         
-        if (!hitWall && ghostSquare.y >= windowHeight - ghostSquare.h) {
+        if (!hitWall && ghostSquare.y >= worldHeight - ghostSquare.h) {
             onGround = true; // We are on the ground if we hit the bottom of the window
             verticalVelocity = 0; // Stop vertical movement when hitting the ground
         }
