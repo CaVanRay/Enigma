@@ -187,7 +187,7 @@ int main(){
         // **************************************** VERTICAL MOVEMENT ********************************
         
         ghostSquare.y += (int)(verticalVelocity * deltaTime);
-        ghostSquare.y = std::min(windowHeight - ghostSquare.h, ghostSquare.y);
+        ghostSquare.y = std::min(worldHeight - ghostSquare.h, ghostSquare.y);
 
         bool hitWall = false; // Flag to check if we hit the wall
         if  (SDL_HasIntersection(&ghostSquare, &bluePlatform)){
