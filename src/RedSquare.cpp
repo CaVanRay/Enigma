@@ -107,14 +107,14 @@ int main(){
     float cameraY = 0.0f;
 
     // SET PLAYABLE AREA AVAILABLE
-    const int worldWidth = 2560;
-    const int worldHeight = 1440;
+    const int worldWidth =  windowWidth * 2;
+    const int worldHeight = windowHeight * 2;
 
-    SDL_Rect redSquare = {960, 400, 40, 40}; // Initial position and size of the red square
-    SDL_Rect ghostSquare = {960, 400, 40, 40}; // Ghost square for collision detection
-    SDL_Rect bluePlatform = {960, 1200, 400, 40}; // Blue platform in center of the screen
-    SDL_Rect greenPlatform = {500, 1000, 400, 40}; // Green platform on the left side of the screen
-    SDL_Rect yellowPlatform = {1100, 850, 400, 40}; // Yellow platform on the right side of the screen
+    SDL_Rect redSquare = {windowWidth / 2,       windowHeight / 2 - 200, 40, 40}; // Initial position and size of the red square
+    SDL_Rect ghostSquare = {windowWidth / 2,       windowHeight / 2 - 200, 40, 40}; // Ghost square for collision detection
+    SDL_Rect bluePlatform = {windowWidth / 2 - 200, windowHeight - 240,     400, 40}; // Blue platform in center of the screen
+    SDL_Rect greenPlatform = {(int)(windowWidth * 0.2f), windowHeight - 440, 400, 40}; // Green platform on the left side of the screen
+    SDL_Rect yellowPlatform = {(int)(windowWidth * 0.43f), windowHeight - 590, 400, 40}; // Yellow platform on the right side of the screen
 
     float playerSpeed = 200.0f; // pixels per second
     float verticalVelocity = 0.0f; // Speed of the red square
