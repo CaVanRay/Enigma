@@ -173,7 +173,7 @@ int main(){
         // **************************************** HORIZONTAL MOVEMENT ******************************
         
         ghostSquare.x += horizontalVelocity;
-        ghostSquare.x = std::max(0, std::min(windowWidth - ghostSquare.w, ghostSquare.x)); // prevent moving out of bounds
+        ghostSquare.x = std::max(0, std::min(worldWidth - ghostSquare.w, ghostSquare.x)); // prevent moving out of bounds
         if (SDL_HasIntersection(&ghostSquare, &bluePlatform)) {
             ghostSquare.x -= horizontalVelocity; // undo movement if colliding with blue platform
         }
