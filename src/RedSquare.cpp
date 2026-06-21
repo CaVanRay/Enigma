@@ -107,8 +107,8 @@ int main(){
     float cameraY = 0.0f;
 
     // SET PLAYABLE AREA AVAILABLE
-    const int worldWidth =  windowWidth * 2;
-    const int worldHeight = windowHeight * 2;
+    const int worldWidth =  windowWidth;
+    const int worldHeight = windowHeight;
 
     SDL_Rect redSquare = {windowWidth / 2,       windowHeight / 2 - 200, 40, 40}; // Initial position and size of the red square
     SDL_Rect ghostSquare = {windowWidth / 2,       windowHeight / 2 - 200, 40, 40}; // Ghost square for collision detection
