@@ -76,7 +76,7 @@ int main(){
     Mix_Chunk* jumpSound = NULL;
     Mix_Music* bgMusic = NULL;
 
-    jumpSound = Mix_LoadWAV("assets/jump.wav");
+    jumpSound = Mix_LoadWAV((basePath + "assets/jump.wav").c_str());
     if(jumpSound == NULL){
         std::cerr << "Failed to load jump sound! SDL_mixer Error: " << Mix_GetError() << std::endl;
         return 1;
