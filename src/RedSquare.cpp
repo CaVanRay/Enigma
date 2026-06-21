@@ -57,7 +57,7 @@ int main(){
         return 1;
     }
 
-    TTF_Font* scoreFont = TTF_OpenFont("assets/arial.ttf", 40);
+    TTF_Font* scoreFont = TTF_OpenFont((basePath + "assets/arial.ttf").c_str(), 40);
 
     if(!scoreFont){
         std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
