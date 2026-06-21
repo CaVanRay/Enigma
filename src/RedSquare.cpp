@@ -140,12 +140,7 @@ int main(){
         lastTime = currentTime;
 
         // Clamp delta time
-        if (deltaTime > 0.05f) deltaTime = 0.05f;    
-        
-        // getting window size to prevent the square from moving out of bounds
-        int windowWidth, windowHeight;
-        SDL_GetWindowSize(window, &windowWidth, &windowHeight);
-        
+        if (deltaTime > 0.05f) deltaTime = 0.05f;         
 
     // **************************************** RESET SECTION ****************************************
         
