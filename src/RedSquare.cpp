@@ -46,6 +46,11 @@ int main(){
         return 1;
     }
 
+    // GET WINDOW SIZE ---------------------
+
+    int windowWidth, windowHeight;
+    SDL_GetWindowSize(window, &windowWidth, &windowHeight);
+
     // INITIALIZE BASEPATH -----------------
 
     std::string basePath = SDL_GetBasePath();
