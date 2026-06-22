@@ -121,6 +121,7 @@ int main(){
 
     // HANDLE REDSQUARE/GHOSTSQUARE POSITION USING FLOATS
     float playerX = windowWidth / 2.0f;
+    float playerY = windowHeight / 2.0f - 200.0f;
     
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
