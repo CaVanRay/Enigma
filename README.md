@@ -22,3 +22,4 @@ Ideas to implement next:
     8) Double jump — track jump count and allow a second jump before landing
 
     Hard
+    9) A checkpoint system — save a respawn position when square touches certain spots
