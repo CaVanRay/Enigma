@@ -19,3 +19,4 @@ Ideas to implement next:
     5) Moving platforms — just add x or y velocity to platform rects each frame and reverse when they hit a boundary
     6) A simple enemy that patrols back and forth on a platform and resets your position if touched
     7) Wall jumping — detect collision with the side of a platform and allow a jump while touching it
+    8) Double jump — track jump count and allow a second jump before landing
