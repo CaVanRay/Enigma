@@ -187,7 +187,7 @@ int main(){
         ghostX += horizontalVelocity;
         ghostX = std::max(0.0f, std::min(worldWidth - ghostWidth, ghostX)); // prevent moving out of bounds
         ghostSquare.x = (int)ghostX; // update ghostSquare for collision test
-        if (SDL_HasIntersection(&ghostSquare, &bluePlatform)) {
+        if (((ghostY >= bluePlatform.y - 35)&&(ghostY <= bluePlatform.y + 35))&&(SDL_HasIntersection(&ghostSquare, &bluePlatform))) {
             ghostX -= horizontalVelocity; // undo movement if colliding with blue platform
             ghostSquare.x = (int)ghostX;
         }
