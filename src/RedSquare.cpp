@@ -195,7 +195,7 @@ int main(){
             ghostX -= horizontalVelocity; // undo movement if colliding with green platform
             ghostSquare.x = (int)ghostX;
         }
-        if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)) {
+        if (((ghostY >= yellowPlatform.y - 35)&&(ghostY <= yellowPlatform.y + 35))&&(SDL_HasIntersection(&ghostSquare, &yellowPlatform))) {
             ghostX -= horizontalVelocity; // undo movement if colliding with yellow platform
             ghostSquare.x = (int)ghostX;
         }
