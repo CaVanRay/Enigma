@@ -120,6 +120,7 @@ int main(){
     SDL_Rect yellowPlatform = {(int)(windowWidth * 0.43f), windowHeight - 590, 400, 40}; // Yellow platform on the right side of the screen
 
     // HANDLE REDSQUARE/GHOSTSQUARE POSITION USING FLOATS
+    float playerX = windowWidth / 2.0f;
     
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
