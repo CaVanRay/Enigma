@@ -17,3 +17,4 @@ Ideas to implement next:
     Medium
     4) Expanding the map — straightforward now that the world/window separation is clean
     5) Moving platforms — just add x or y velocity to platform rects each frame and reverse when they hit a boundary
+    6) A simple enemy that patrols back and forth on a platform and resets your position if touched
