@@ -15,4 +15,4 @@ Ideas to implement next:
     3) A collectible coin or star that disappears when touched and increments a counter displayed on screen
 
     Medium
-    4) Expanding the map — straightforward now that your world/window separation is clean
+    4) Expanding the map — straightforward now that the world/window separation is clean
