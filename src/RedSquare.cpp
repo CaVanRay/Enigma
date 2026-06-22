@@ -126,6 +126,7 @@ int main(){
     float ghostY = playerY;
     float playerWidth = 40.0f;
     float playerHeight = 40.0f;
+    float ghostWidth = 40.0f;
     
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
