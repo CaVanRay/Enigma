@@ -181,6 +181,9 @@ int main(){
         if (keyboardState[SDL_SCANCODE_ESCAPE]) {
             running = false;
         }
+        if (keyboardState[SDL_SCANCODE_LSHIFT]) {
+            horizontalVelocity = horizontalVelocity * 2.5f;
+        }
         
         // **************************************** HORIZONTAL MOVEMENT ******************************
         
