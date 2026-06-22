@@ -28,7 +28,7 @@ int main(){
 
     // in case of high DPI display
     SDL_SetHint(SDL_HINT_VIDEO_HIGHDPI_DISABLED, "1");
-    
+
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
         return 1;
@@ -128,7 +128,7 @@ int main(){
     float playerHeight = 40.0f;
     float ghostWidth = 40.0f;
     float ghostHeight = 40.0f;
-    
+
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
     bool onGround = true; // To check if the red square is on the ground for jumping
@@ -152,7 +152,7 @@ int main(){
         lastTime = currentTime;
 
         // Clamp delta time
-        if (deltaTime > 0.05f) deltaTime = 0.05f;         
+        if (deltaTime > 0.05f) deltaTime = 0.05f;           
 
     // **************************************** RESET SECTION ****************************************
         
@@ -184,26 +184,28 @@ int main(){
         
         // **************************************** HORIZONTAL MOVEMENT ******************************
         
-        ghostSquare.x += horizontalVelocity;
-        ghostSquare.x = std::max(0, std::min(worldWidth - ghostSquare.w, ghostSquare.x)); // prevent moving out of bounds
+        ghostX += horizontalVelocity;
+        ghostX = std::max(0.0f, std::min(worldWidth - ghostWidth, ghostX)); // prevent moving out of bounds
+        ghostSquare.x = (int)ghostX; // update ghostSquare for collision test
         if (SDL_HasIntersection(&ghostSquare, &bluePlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with blue platform
+            ghostX -= horizontalVelocity; // undo movement if colliding with blue platform
         }
         if (SDL_HasIntersection(&ghostSquare, &greenPlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with green platform
+            ghostX -= horizontalVelocity; // undo movement if colliding with green platform
         }
         if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)) {
-            ghostSquare.x -= horizontalVelocity; // undo movement if colliding with yellow platform
+            ghostX -= horizontalVelocity; // undo movement if colliding with yellow platform
         }
         
         // **************************************** VERTICAL MOVEMENT ********************************
         
-        ghostSquare.y += (int)(verticalVelocity * deltaTime);
-        ghostSquare.y = std::min(worldHeight - ghostSquare.h, ghostSquare.y);
+        ghostY += verticalVelocity * deltaTime;
+        ghostY = std::min(worldHeight - ghostHeight, ghostY);
 
         bool hitWall = false; // Flag to check if we hit the wall
+        ghostSquare.y = (int)ghostY; // update ghostSquare for collision test
         if  (SDL_HasIntersection(&ghostSquare, &bluePlatform)){
-            ghostSquare.y -= verticalVelocity * deltaTime; // undo movement if colliding with blue platform
+            ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with blue platform
             if (verticalVelocity > 0) { // If falling down, we were landing
                 onGround = true;
                 hitWall = true;
@@ -214,7 +216,7 @@ int main(){
             }
         }
         if (SDL_HasIntersection(&ghostSquare, &greenPlatform)){
-            ghostSquare.y -= verticalVelocity * deltaTime; // undo movement if colliding with green platform
+            ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with green platform
             if (verticalVelocity > 0) { // If falling down, we were landing
                 onGround = true;
                 hitWall = true;
@@ -225,7 +227,7 @@ int main(){
             }
         }
         if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)){
-            ghostSquare.y -= verticalVelocity * deltaTime; // undo movement if colliding with yellow platform
+            ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with yellow platform
             if (verticalVelocity > 0) { // If falling down, we were landing
                 onGround = true;
                 hitWall = true;
@@ -236,15 +238,15 @@ int main(){
             }
         }
         
-        if (!hitWall && ghostSquare.y >= worldHeight - ghostSquare.h) {
+        if (!hitWall && ghostY >= worldHeight - ghostHeight) {
             onGround = true; // We are on the ground if we hit the bottom of the window
             verticalVelocity = 0; // Stop vertical movement when hitting the ground
         }
         
         // **************************************** UPDATE RED SQUARE LOCATION ***********************
         
-        redSquare.x = ghostSquare.x;
-        redSquare.y = ghostSquare.y;
+        redSquare.x = (int)ghostX;
+        redSquare.y = (int)ghostY;
         
         // **************************************** RENDERING **************************************** 
   
