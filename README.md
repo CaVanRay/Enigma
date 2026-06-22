@@ -24,3 +24,4 @@ Ideas to implement next:
     Hard
     9) A checkpoint system — save a respawn position when square touches certain spots
     10) A simple level system — when square reaches a goal, load a new platform layout
+    11) A tile map loaded from a text file — to allow designing levels outside the code
