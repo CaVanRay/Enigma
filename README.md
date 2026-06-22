@@ -5,5 +5,9 @@ Just a simple side scroller where you control a red square and can jump and move
 
 
 
+
+
 Ideas to implement next:
-    1 - Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps
+
+    1) Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps
+    
