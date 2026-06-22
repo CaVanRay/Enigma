@@ -9,6 +9,7 @@ Just a simple side scroller where you control a red square and can jump and move
 
 Ideas to implement next:
 
+    Easy
     1) Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps
     2) Screen shake when landing from a high fall
     3) A collectible coin or star that disappears when touched and increments a counter displayed on screen
