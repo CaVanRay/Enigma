@@ -5,7 +5,7 @@ Just a simple side scroller where you control a red square and can jump and move
 
 
 Bugs to fix:
-    - Red Square can clip into platforms 
+    1) Red Square can clip into platforms 
 
 
 Ideas to implement next:
