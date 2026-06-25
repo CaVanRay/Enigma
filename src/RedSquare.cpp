@@ -116,7 +116,7 @@ int main(){
     float shakeIntensity = 0.0f;
     float maxIntensity = 3.0f;
     bool isShaking = false;
-    
+
     // SET PLAYABLE AREA AVAILABLE
     const int worldWidth =  windowWidth;
     const int worldHeight = windowHeight;
@@ -167,9 +167,27 @@ int main(){
         float horizontalVelocity = 0.0f; // Horizontal velocity reset each frame
         
         verticalVelocity += GRAVITY * deltaTime; // Apply gravity to vertical velocity
+
+        if(isShaking){
+
+            float randomX = ((rand() / (float)RAND_MAX) * 2.0f - 1.0f) * maxIntensity;
+            float randomY = ((rand() / (float)RAND_MAX) * 2.0f - 1.0f) * maxIntensity;
+
+            shakeX = randomX;
+            shakeY = randomY;
+
+            shakeDuration -= deltaTime;
+
+            if (shakeDuration <= 0) {
+                isShaking = false;
+                shakeX = 0.0f;
+                shakeY = 0.0f;
+                maxIntensity = 0.0f;
+            }
+        }
         
-        cameraX = redSquare.x - windowWidth / 2;
-        cameraY = redSquare.y - windowHeight / 2;
+        cameraX = redSquare.x - windowWidth / 2 + shakeX;
+        cameraY = redSquare.y - windowHeight / 2 + shakeY;
         
     // **************************************** KEYBOARD INPUT ***************************************
 
@@ -185,6 +203,8 @@ int main(){
             Mix_PlayChannel( -1, jumpSound, 0);
             verticalVelocity = -800.0f; 
             onGround = false;
+            shakeDuration = 0.25f;
+            maxIntensity = 3.0f;
         }
         if (keyboardState[SDL_SCANCODE_ESCAPE]) {
             running = false;
@@ -221,6 +241,7 @@ int main(){
         if  (SDL_HasIntersection(&ghostSquare, &bluePlatform)){
             ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with blue platform
             if (verticalVelocity > 0) { // If falling down, we were landing
+                if((!onGround) && (!isShaking)){isShaking = true;}
                 onGround = true;
                 hitWall = true;
                 verticalVelocity = 0; // reset vertical movement after landing
@@ -232,6 +253,7 @@ int main(){
         if (SDL_HasIntersection(&ghostSquare, &greenPlatform)){
             ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with green platform
             if (verticalVelocity > 0) { // If falling down, we were landing
+                if((!onGround) && (!isShaking)){isShaking = true;}
                 onGround = true;
                 hitWall = true;
                 verticalVelocity = 0; // reset vertical movement after landing
@@ -243,6 +265,7 @@ int main(){
         if (SDL_HasIntersection(&ghostSquare, &yellowPlatform)){
             ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with yellow platform
             if (verticalVelocity > 0) { // If falling down, we were landing
+                if((!onGround) && (!isShaking)){isShaking = true;}
                 onGround = true;
                 hitWall = true;
                 verticalVelocity = 0; // reset vertical movement after landing
@@ -253,7 +276,9 @@ int main(){
         }
         
         if (!hitWall && ghostY >= worldHeight - ghostHeight) {
+            if((!onGround) && (!isShaking)){isShaking = true;}
             onGround = true; // We are on the ground if we hit the bottom of the window
+            if(!isShaking){isShaking = true;}
             verticalVelocity = 0; // Stop vertical movement when hitting the ground
         }
         
