@@ -113,6 +113,7 @@ int main(){
     float shakeX = 0.0f;
     float shakeY = 0.0f;
     float shakeDuration = 0.25f;
+    float shakeIntensity = 0.0f;
     
     // SET PLAYABLE AREA AVAILABLE
     const int worldWidth =  windowWidth;
