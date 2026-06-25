@@ -7,7 +7,8 @@ Just a simple side scroller where you control a red square and can jump and move
 Bugs to fix
     - [ ] Red Square can clip into platforms 
 
-Ideas to implement next:        
+Ideas to implement next:
+
     Easy
     - [ ] Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps.  
     - [x] Screen shake when landing from a high fall
