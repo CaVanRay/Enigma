@@ -111,6 +111,7 @@ int main(){
 
     // FOR SHAKING THE SCREEN WHEN LANDING OR GETTING HIT
     float shakeX = 0.0f;
+    float shakeY = 0.0f;
     
     // SET PLAYABLE AREA AVAILABLE
     const int worldWidth =  windowWidth;
