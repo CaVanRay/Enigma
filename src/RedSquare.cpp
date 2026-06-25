@@ -109,6 +109,8 @@ int main(){
     float cameraX = 0.0f;
     float cameraY = 0.0f;
 
+    // FOR SHAKING THE SCREEN WHEN LANDING OR GETTING HIT
+    
     // SET PLAYABLE AREA AVAILABLE
     const int worldWidth =  windowWidth;
     const int worldHeight = windowHeight;
