@@ -92,7 +92,10 @@ int main(){
     }
 
     landingBamf = Mix_LoadWAV((basePath + "assets/bamf.wav").c_str());
-    if(landingBamf == NULL){}
+    if(landingBamf == NULL){
+        std::cerr << "Failed to load landing Bamf sound! SDL_mixer Error: " << Mix_GetError() << std::endl;
+        return 1;
+    }
 
     bgMusic = Mix_LoadMUS((basePath + "assets/backgroundMusic.wav").c_str());
     if(bgMusic == NULL){
