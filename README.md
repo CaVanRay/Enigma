@@ -11,7 +11,7 @@ Ideas to implement next:
     Easy
 - [ ] Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps.  
 - [x] Screen shake when landing from a high fall
-- [ ] 
+- [ ] "Bamf" sound whenever you land
 - [ ] A collectible coin or star that disappears when touched and increments a counter displayed on screen
     Medium
 - [ ] Expanding the map — straightforward now that the world/window separation is clean
