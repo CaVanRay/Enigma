@@ -82,6 +82,7 @@ int main(){
     }
 
     Mix_Chunk* jumpSound = NULL;
+    Mix_Chunk* landingBamf = NULL;
     Mix_Music* bgMusic = NULL;
 
     jumpSound = Mix_LoadWAV((basePath + "assets/jump.wav").c_str());
