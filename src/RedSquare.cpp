@@ -92,6 +92,7 @@ int main(){
     }
 
     landingBamf = Mix_LoadWAV((basePath + "assets/bamf.wav").c_str());
+    if(landingBamf == NULL){}
 
     bgMusic = Mix_LoadMUS((basePath + "assets/backgroundMusic.wav").c_str());
     if(bgMusic == NULL){
