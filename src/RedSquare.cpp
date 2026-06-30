@@ -249,6 +249,7 @@ int main(){
             ghostY -= verticalVelocity * deltaTime; // undo movement if colliding with blue platform
             if (verticalVelocity > 0) { // If falling down, we were landing
                 if((!onGround) && (!isShaking)){isShaking = true;}
+                Mix_PlayChannel( -1, landingBamf, 0);
                 onGround = true;
                 hitWall = true;
                 verticalVelocity = 0; // reset vertical movement after landing
