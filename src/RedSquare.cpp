@@ -294,7 +294,6 @@ int main(){
         if (!hitWall && ghostY >= worldHeight - ghostHeight) {
             if((!onGround) && (!isShaking)){isShaking = true;}
             onGround = true; // We are on the ground if we hit the bottom of the window
-            if(!isShaking){isShaking = true;}
             verticalVelocity = 0; // Stop vertical movement when hitting the ground
         }
         
