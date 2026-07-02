@@ -25,3 +25,6 @@ Ideas to implement next:
 - [ ] A simple level system — when square reaches a goal, load a new platform layout
 - [ ] A tile map loaded from a text file — to allow designing levels outside the code
 - [ ] Parallax background — multiple background layers scrolling at different speeds for depth
+
+
+
