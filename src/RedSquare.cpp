@@ -97,7 +97,7 @@ int main(){
         return 1;
     }
 
-    bgMusic = Mix_LoadMUS((basePath + "assets/backgroundMusic.wav").c_str());
+    bgMusic = Mix_LoadMUS((basePath + "assets/background.mp3").c_str());
     if(bgMusic == NULL){
         std::cerr << "Failed to load background Music! SDL_mixer Error: " << Mix_GetError() << std::endl;
         return 1;
