@@ -151,6 +151,7 @@ int main(){
     bool isJumping = false;
     bool isFalling = false;
     float jumpTimer = 0.0f;
+    const float maxJumpTime = 0.3f;
 
     // **************************************** GAME LOOP ****************************************
     
