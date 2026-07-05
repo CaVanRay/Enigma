@@ -9,6 +9,7 @@ Bugs to fix
 
 Ideas to implement next:
     Easy
+-[ ]
 - [ ] Variable jump height — if you release space early, cut vertical velocity so short taps give small jumps and held space gives full jumps.  
 - [x] Screen shake when landing from a high fall
 - [x] "Bamf" sound whenever you land
