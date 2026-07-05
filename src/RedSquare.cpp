@@ -150,6 +150,7 @@ int main(){
     bool onGround = false; // To check if the red square is on the ground for jumping
     bool isJumping = false;
     bool isFalling = false;
+    float jumpTimer = 0.0f;
 
     // **************************************** GAME LOOP ****************************************
     
