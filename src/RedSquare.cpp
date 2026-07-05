@@ -148,6 +148,7 @@ int main(){
     float verticalVelocity = 0.0f; // Speed of the red square
     const float GRAVITY = 900.0f; // Gravity affecting the red square
     bool onGround = false; // To check if the red square is on the ground for jumping
+    bool isJumping = false;
 
     // **************************************** GAME LOOP ****************************************
     
