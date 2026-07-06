@@ -151,7 +151,7 @@ int main(){
     bool isJumping = false; // for implementing variable jumping
     bool isFalling = false; // for implementing fall effects/sounds
     float jumpTimer = 0.0f;
-    const float maxJumpTime = 0.3f;
+    // const float maxJumpTime = 0.3f;
 
     // **************************************** GAME LOOP ****************************************
     
